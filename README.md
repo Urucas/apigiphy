@@ -1,4 +1,5 @@
-# apigiphy
+# apigiphy [![Build Status](https://travis-ci.org/Urucas/apigiphy.svg?branch=master)](https://travis-ci.org/Urucas/apigiphy)
+
 Giphy API made simple. 
 
 *A node implementation of Giphy API requests. Check [GiphyApi](https://github.com/Giphy/GiphyAPI) for more info.*
