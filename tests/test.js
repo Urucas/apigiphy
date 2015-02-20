@@ -1,4 +1,4 @@
-import apigiphy from '../node/';
+import apigiphy from '../lib/';
 import {api_key} from './config';
 
 describe("Apigiphy instance test", () => {
