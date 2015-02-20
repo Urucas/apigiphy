@@ -1,11 +1,14 @@
 {
   "name": "apigiphy",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Giphy API made simple",
   "main": "./node/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "gif, giphy, api, images, animation"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Urucas/apigiphy.git"
@@ -14,6 +17,12 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Urucas/apigiphy/issues"
+  },
+  "files": [
+    "./node/index.js"
+  ],
+  "bin": {
+    "apigiphy": "./node/index.js" 
   },
   "homepage": "https://github.com/Urucas/apigiphy",
   "dependencies": {
