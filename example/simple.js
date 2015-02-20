@@ -1,4 +1,4 @@
-var giphy = require('../node');
+var giphy = require('apigiphy');
 
 giphy = giphy({api_key:'dc6zaTOxFJmzC'});
 
