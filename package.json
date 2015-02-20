@@ -1,10 +1,10 @@
 {
   "name": "apigiphy",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Giphy API made simple",
   "main": "./node/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/mocha/bin/mocha tests/* --compilers js:6to5/register -t 15s" 
   },
   "keywords": [
     "gif, giphy, api, images, animation"
@@ -22,5 +22,9 @@
   "dependencies": {
     "6to5": "^3.6.5",
     "request": "^2.53.0"
+  },
+  "devDependencies": {
+    "6to5ify": "3.1.2",
+    "mocha": "2.1.0"
   }
 }
