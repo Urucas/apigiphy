@@ -22,7 +22,7 @@ giphy.search({q:"flip the table"})
 /*
  * Random API Example
  *
- */
+ *
 giphy.random({tag:"facepalm"})
 .then(function(response){
   console.log("success");
@@ -35,4 +35,18 @@ giphy.random({tag:"facepalm"})
 /*
  * 
  */
+
+ /*
+ * Trending API Example
+ *
+ */
+
+giphy.trending()
+.then(function(response){
+  console.log("success");
+  console.log(response.data);
+}, function(error){
+  console.log("error");
+  console.log(error);  
+});
 
