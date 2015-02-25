@@ -1,6 +1,6 @@
 {
   "name": "apigiphy",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Giphy API made simple",
   "main": "./node/index.js",
   "scripts": {
