@@ -43,3 +43,10 @@ Implemented methods
 
 .trending().then(success, error);
 ```
+
+**Run the example**
+```bash
+git clone https://github.com/Urucas/apigiphy.git && cd apigiphy
+make clean && make
+node example/simple.js
+```
