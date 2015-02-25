@@ -1,4 +1,4 @@
-var giphy = require('apigiphy');
+var giphy = require('../node/');
 
 giphy = giphy({api_key:'dc6zaTOxFJmzC'});
 
@@ -44,7 +44,7 @@ giphy.random({tag:"facepalm"})
 giphy.trending()
 .then(function(response){
   console.log("success");
-  console.log(response.data);
+  console.log(response.data[0].embed_url);
 }, function(error){
   console.log("error");
   console.log(error);  

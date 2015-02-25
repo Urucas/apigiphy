@@ -4,7 +4,7 @@
   "description": "Giphy API made simple",
   "main": "./node/index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha tests/* --compilers js:6to5/register -t 15s" 
+    "test": "node_modules/mocha/bin/mocha tests/* --compilers js:6to5/register -t 15s --require mocha-clean" 
   },
   "keywords": [
     "gif, giphy, api, images, animation"

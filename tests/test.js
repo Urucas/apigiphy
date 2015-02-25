@@ -3,7 +3,7 @@ import {api_key} from './config';
 
 describe("Apigiphy instance test", () => {
   
-  let giphy = apigiphy(api_key);
+  var giphy = apigiphy({api_key:api_key});
   it("Test rating method", (done) => {
     let rating = giphy.rating;
     if(rating("y")!="y") 
@@ -32,19 +32,44 @@ describe("Apigiphy instance test", () => {
     done();
   });
 
-  it("Test trending method", (done) => {
-    // TODO - test implementation
+  it("Test api_key is setted", (done) => {
+    if(giphy.key() == undefined || giphy.key() != api_key) {
+      throw new Error("Error setting api_key!");
+    }
     done();
+  });
+
+  it("Test trending method", (done) => {
+    try {
+      giphy.trending().then(function(response){
+        if(response.meta.status == 200) done();
+        else throw new Error(response.meta.msg);
+      })
+    }catch(e){
+      throw new Error(e.getMessage);  
+    }
   });
 
   it("Test search method", (done) => {
-    // TODO - test implementation
-    done();
+    try {
+      giphy.search({q:"test"}).then(function(response){
+        if(response.meta.status == 200) done();
+        else throw new Error(response.meta.msg);
+      })
+    }catch(e){
+      throw new Error(e.getMessage);  
+    }
   });
 
   it("Test random method", (done) => {
-    // TODO - test implementation
-    done();
+    try {
+      giphy.random({tag:"test"}).then(function(response){
+        if(response.meta.status == 200) done();
+        else throw new Error(response.meta.msg);
+      })
+    }catch(e){
+      throw new Error(e.getMessage);  
+    }
   });
 
 });
