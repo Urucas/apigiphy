@@ -4,7 +4,7 @@
   "description": "Giphy API made simple",
   "main": "./node/index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha tests/* --compilers js:6to5/register -t 15s --require mocha-clean" 
+    "test": "node_modules/mocha/bin/mocha tests/* --compilers js:6to5/register -t 15s --require mocha-clean"
   },
   "keywords": [
     "gif, giphy, api, images, animation"
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "6to5ify": "3.1.2",
-    "mocha": "2.1.0"
+    "mocha": "2.1.0",
+    "mocha-clean": "^0.4.0"
   }
 }
