@@ -1,6 +1,6 @@
 # apigiphy [![Build Status](https://travis-ci.org/Urucas/apigiphy.svg?branch=master)](https://travis-ci.org/Urucas/apigiphy)
 
-Giphy API made simple. 
+Giphy API made simple.
 
 *A node implementation of Giphy API requests. Check [GiphyApi](https://github.com/Giphy/GiphyAPI) for more info.*
 
@@ -33,15 +33,21 @@ Implemented methods
   q: q, // search query term or phrase
   limit: limit, // (optional) number of results to return, maximum 100. Default 25
   offset: offset, // (optional) results offset, defaults to 0
-  rating: rating // limit results to those rated (y,g, pg, pg-13 or r).
+  rating: rating // limit results to those rated (y,g, pg, pg-13 or r).,
+  stickers: false // (optional) set to true to search stickers api instead of gifs api. Default false
 }).then(success, error);
 
 .random({
   tag: tag, // the GIF tag to limit randomness by
   rating: rating // limit results to those rated (y,g, pg, pg-13 or r).
+  stickers: false, // (optional) set to true to search stickers api instead of gifs api. Default false
 }).then(success, error);
 
-.trending().then(success, error);
+.trending({
+    limit: limit, // (optional) number of results to return, maximum 100. Default 25
+    rating: rating, // limit results to those rated (y,g, pg, pg-13 or r).
+    stickers: false // (optional) set to true to search stickers api instead of gifs api. Default false
+}).then(success, error);
 ```
 
 **Run the example**

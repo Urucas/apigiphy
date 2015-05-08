@@ -2,28 +2,28 @@ import apigiphy from '../lib/';
 import {api_key} from './config';
 
 describe("Apigiphy instance test", () => {
-  
+
   var giphy = apigiphy({api_key:api_key});
   it("Test rating method", (done) => {
     let rating = giphy.rating;
-    if(rating("y")!="y") 
+    if(rating("y")!="y")
       throw new Error("rating method fail while testing 'y' param");
-    
-    if(rating("g")!="g") 
+
+    if(rating("g")!="g")
       throw new Error("rating method fail while testing 'g' param");
-    
-    if(rating("pg")!="pg") 
+
+    if(rating("pg")!="pg")
       throw new Error("rating method fail while testing 'pg' param");
-    
-    if(rating("pg-13")!="pg-13") 
+
+    if(rating("pg-13")!="pg-13")
       throw new Error("rating method fail while testing 'pg-13' param");
-    
-    if(rating("r")!="r") 
+
+    if(rating("r")!="r")
       throw new Error("rating method fail while testing 'r' param");
-      
+
     done();
   });
-  
+
   it("Test api_url method", (done) => {
     let url = giphy.api_url("gifs/search");
     if(!url.match(/http:\/\/api.giphy.com\/v1\/gifs\/search/))
@@ -46,7 +46,7 @@ describe("Apigiphy instance test", () => {
         else throw new Error(response.meta.msg);
       })
     }catch(e){
-      throw new Error(e.getMessage);  
+      throw new Error(e.getMessage);
     }
   });
 
@@ -57,7 +57,7 @@ describe("Apigiphy instance test", () => {
         else throw new Error(response.meta.msg);
       })
     }catch(e){
-      throw new Error(e.getMessage);  
+      throw new Error(e.getMessage);
     }
   });
 
@@ -68,7 +68,18 @@ describe("Apigiphy instance test", () => {
         else throw new Error(response.meta.msg);
       })
     }catch(e){
-      throw new Error(e.getMessage);  
+      throw new Error(e.getMessage);
+    }
+  });
+
+  it("Test stickers flag", (done) => {
+    try {
+      giphy.search({q:"test", stickers: true}).then(function(response){
+        if(response.meta.status == 200) done();
+        else throw new Error(response.meta.msg);
+      })
+    }catch(e){
+      throw new Error(e.getMessage);
     }
   });
 
