@@ -1,5 +1,5 @@
 
-6TO5 = ./node_modules/.bin/6to5
+BABEL = ./node_modules/.bin/babel
 
 all: node
 
@@ -7,7 +7,7 @@ node: lib
 	@mkdir -p ./node
 	@for path in lib/*.js; do \
 		file=`basename $$path`; \
-		$(6TO5) "lib/$$file" > "node/$$file"; \
+		$(BABEL) "lib/$$file" > "node/$$file"; \
 	done
 
 clean:
